@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How Smart are You?</title>
+        <meta charset = "UTF-8">
+        <link rel = "stylesheet" href = "test.css">
+    </head>
+    <body>
+        <div id = "HomeScreen">
+            <h1> How Smart are You?</h1>
+            <div id = "instrucBack">
+                <h2> Instructions:</h2>
+                <p>
+                    You will recieve 20 random questions, please answer each question to the best of your ability. You will be given 90 seconds to answer all the questions. After the test, you will be given your score, and your IQ level. Once you answer a question, you cannot go back.
+                </p>
+                <button id = "beginTestButton">Begin Test</button>
+            </div>
+        </div>
+
+        <div id = "testTakingBackground">
+            <div>
+                <h1 id = "question">s being asked?</h1>
+            </div>
+        </div>
+
+        <div id = "anserChoices">
+                <button id = "but1" class = "button">but1</button>
+                <button id = "but2" class = "button">but2</button>
+                <button id = "but3" class = "button">but3</button>
+                <button id = "but4" class = "button">but4</button>
+        </div>
+
+        <div id = "endTest">
+            <h1> Analysis: </h1>
+            <div id = "infoBox">
+                <h3 id = "Correct">Correct: <span id = "CorrectScore"> 0</span></h3>
+                <h3 id = "Incorrect">Incorrect: <span id = "IncorrectScore">0</span></h3>
+                <h3 id = "IQ">IQ: <span id = "IQlevel">0</span></h3>
+            </div>
+        </div>
+
+        <div id ="timer">
+            <h1 id = "timerText">Timer:<br><span id = "timeLeft">90</span></h1>
+        </div>
+
+        <script src = "test.js"></script>
+    </body>
+</html>
