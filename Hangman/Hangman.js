@@ -20,7 +20,24 @@ document.addEventListener("DOMContentLoaded", function(){
     const legL = document.getElementById("legL");
 
     // max length: 9
-    var Words = ["poet", "computer", "desk", "mouse", "brackets", "destory", "keyboard", "school"];
+    var Words = ["apple", "banana", "yellow", "orange", "grape", "melon", "berry", "peach", "mango", "kiwi",
+"pear", "plum", "lime", "lemon", "apricot", "fig", "date", "papaya", "guava", "coconut",
+"strawberry", "blueberry", "raspberry", "blackberry", "watermelon", "pineapple", "nectarine",
+"tomato", "carrot", "potato", "onion", "garlic", "pepper", "spinach", "lettuce", "broccoli",
+"cabbage", "celery", "cucumber", "pumpkin", "squash", "corn", "bean", "pea", "ginger",
+"basil", "mint", "oregano", "thyme", "parsley", "rosemary", "sage", "cherry", "olive",
+"almond", "walnut", "pecan", "hazelnut", "cashew", "pistachio", "rice", "wheat", "oats",
+"barley", "bread", "butter", "cheese", "milk", "yogurt", "cream", "honey", "sugar",
+"salt", "peppercorn", "cinnamon", "vanilla", "chocolate", "coffee", "tea", "juice",
+"water", "soda", "cookie", "cake", "pie", "pasta", "noodle", "soup", "salad", "sandwich",
+"burger", "pizza", "taco", "burrito", "salsa", "ketchup", "mustard", "mayonnaise",
+"chicken", "beef", "pork", "fish", "shrimp", "crab", "lobster", "egg", "tofu", "beansprout",
+"forest", "river", "mountain", "ocean", "desert", "island", "valley", "hill", "cloud",
+"rain", "snow", "wind", "storm", "sun", "moon", "star", "sky", "tree", "flower",
+"grass", "leaf", "stone", "sand", "fire", "ice", "metal", "wood", "glass", "paper",
+"pencil", "book", "chair", "table", "window", "door", "house", "road", "car", "train",
+"bus", "bicycle", "phone", "computer", "keyboard", "screen", "music", "sound", "light",
+"color", "shape", "circle", "square", "triangle", "energy", "time", "space", "dream", "idea", "poet"];
     var word = null;
 
     var TypingOnDiv = 1;
