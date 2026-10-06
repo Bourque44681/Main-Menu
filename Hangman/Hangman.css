@@ -35,7 +35,7 @@
 
 #theManOfHanging {
     position: absolute;
-    background-color: darkgray;
+    background-color: rgb(169, 169, 169);
     width:60vw;
     height: 24vw;
     top:15vw;

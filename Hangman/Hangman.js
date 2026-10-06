@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
 "pencil", "book", "chair", "table", "window", "door", "house", "road", "car", "train",
 "bus", "bicycle", "phone", "computer", "keyboard", "screen", "music", "sound", "light",
 "color", "shape", "circle", "square", "triangle", "energy", "time", "space", "dream", "idea", "poet"];
+    // var Words = ["poet"];
     var word = null;
 
     var TypingOnDiv = 1;
@@ -226,6 +227,14 @@ document.addEventListener("DOMContentLoaded", function(){
     function GetFirstLetterPlacement(){
         CurrentKeepTrack = 0;
 
+        // find total slots filled to see if all slots are filled
+        let count = 0;
+        for (let i = 0; i< word.length;i++){
+            if (LetterPlacementTrack[i] === true){
+                count++;
+            }
+        }
+
         let needCheck = false;
         //Find next available spot, if none, sets it to last slot that you gussed (not a guessed word)
         for (let i = 0; i<MaxCurrent; i++){
@@ -248,6 +257,16 @@ document.addEventListener("DOMContentLoaded", function(){
                 if (CorrectlyGussedLetters[i] === false){
                     CurrentKeepTrack = i + 1;
                     break;
+                }
+            }
+        }
+        if (count === word.length){
+            for (let i = word.length; i>0;i--){
+                if (CorrectlyGussedLetters[i] === false){
+                    CurrentKeepTrack = i + 1;
+                    slotToTarget = LetterPlacementDivs[CurrentKeepTrack - 1];
+                    slotToTarget.appendChild(currentTyping);
+                    return;
                 }
             }
         }
@@ -388,7 +407,14 @@ document.addEventListener("DOMContentLoaded", function(){
         else {
             resetLettersPlacement();
         }
+        let gussedWord = "";
+        for (let i = 0; i < LetterPlacementDivs.length;i++){
+            gussedWord += LetterPlacementDivs[i].textContent;
+        }
 
+        if (gussedWord === word){
+            won = true;
+        }
         GetFirstAlreadyChosen();
         MissgussedWords[AlreadyKeepTrack] = letter;
         AlreadyLettersTrack[AlreadyKeepTrack] = true;
@@ -449,6 +475,16 @@ document.addEventListener("DOMContentLoaded", function(){
                 GetFirstLetterPlacement();
             }
         }
+        else if (key === "1" || key === "2"){
+            if (key === "1"){
+                GetFirstAlreadyChosen();
+                TypingOnDiv = 2;
+            }
+            else {
+                GetFirstLetterPlacement();
+                TypingOnDiv = 1;
+            }
+        }
         else if (letters.includes(key) || key === "Backspace" || key === "Enter"){
             // Letter Placement Div Typing (full word guess)
             if (TypingOnDiv === 1){
@@ -501,6 +537,23 @@ document.addEventListener("DOMContentLoaded", function(){
                             for (let i = 0; i < LetterPlacementDivs.length;i++){
                                 gussedWord += LetterPlacementDivs[i].textContent;
                             }
+
+                            let check = false;
+                            for (let i = 0; i <word.length;i++){
+                                if (MissgussedWords.includes(gussedWord[i]) && !CorrectlyGussedLetters.includes(gussedWord[i])){
+                                    check = true;
+                                    let h1 = LetterPlacementDivs[i].querySelector("h1");
+                                    LetterPlacementDivs[i].style.backgroundColor = "rgb(95, 84, 84)";
+                                    LetterPlacementTrack[i] = false;
+                                    h1.remove();
+                                }
+                                else {
+                                    LetterPlacementDivs[i].style.backgroundColor = "rgb(169, 169, 169)";
+                                }
+                                
+                            }
+                            GetFirstLetterPlacement();
+                            if (check){return;};
                             GuessedWord(gussedWord);
                             resetLettersPlacement();
                             GetFirstLetterPlacement();
@@ -540,6 +593,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 else if (key === "Enter"){
                     // entering one letter logic
+                    let good = false;
+                    if (MissgussedWords.includes(lastLetter)){
+                        AlreadyChosenDivs[AlreadyKeepTrack].style.backgroundColor = "rgb(95, 84, 84)";
+                        good = true;
+                    }
+
+                    if (good){return;};
                     check = false;
                     GuessedLetter(lastLetter);
                     resetAlreadyChosen();
