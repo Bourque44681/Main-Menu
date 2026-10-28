@@ -1,0 +1,194 @@
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { transform: translateX(-10px); }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+.shakeAnim {
+    animation: shake 2s;
+}
+
+@keyframes shipMove {
+    0% {transform: translateY(9vw);}
+    20% {transform: translateY(8vw);}
+    30% {transform: translateY(7vw);}
+    40% {transform: translateY(6vw);}
+    50% {transform: translateY(5vw);}
+    60% {transform: translateY(4vw);}
+    70% {transform: translateY(3vw);}
+    80% {transform: translateY(2vw);}
+    90% {transform: translateY(1vw);}
+    100% {transform: translateY(0vw)}
+}
+
+.shipMove {
+    animation: shipMove 2s;
+}
+
+@keyframes rockBOOM {
+    0% {scale: 1}
+    100% {scale: 2}
+}
+
+.rockBoom {
+    animation:rockBOOM 3s;
+}
+
+body {
+    overflow: hidden;
+}
+
+#Background {
+    z-index: -4;
+    width: 103%;
+    height: 107%;
+    /* border: 2px solid red; */
+    /* opacity: 0%; */
+}
+
+#Rocketship {
+    position: absolute;
+    z-index: 0;
+    width: 7vw;
+    height: 7vw;
+    left: 46%;
+    bottom:2vw;
+    margin: 0 !important;
+
+    /* border: 2px solid red; */
+}
+
+.shoot {
+    position: absolute;
+    width:.2vw;
+    height:2vw;
+    background-color: red;
+    border-radius: 2vw;
+    opacity: 0%;
+    z-index: -1;
+}
+
+#screenShakeContainer {
+    position:absolute;
+    /* background-color: black; */
+    width:100%;
+    height: 100%;
+    /* border: 2px solid red; */
+   
+}
+
+#MENU-div{
+    transition: all 0.3s ease;
+}
+
+#mainMenu {
+    z-index: 1;
+    position: absolute;
+    width: 60vw;
+    height:30vw;
+    /* background-color: white; */
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius: 4vw;
+}
+
+#extraBack {
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width: 66vw;
+    height: 36vw;
+    border-color: rgba(8, 84, 8, 0.854);
+    border-radius: 4vw;
+    border-width: .8vw;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 27vw;
+    grid-template-rows: repeat(4,0vw);
+    row-gap: 7vw;
+}
+
+.menuBackG {
+    border: 1vw solid green;
+    background-color: rgba(130, 202, 41, 0.352);
+}
+
+.button {
+    position: relative;
+    border: .6vw solid rgb(3, 81, 3);
+    width:auto;
+    height:6vw;
+    text-align: center;
+    text-justify: center;
+    font-size: 4vw;
+    font-weight:bolder;
+    border-radius: 2vw;
+    background-color: rgba(16, 199, 31, 0.616);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#gearSettings {
+    position: relative;
+    height: 4vw;
+    width: 4vw;
+    top:.5vw;
+}
+
+.smallButton {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#gearSettingsButton {
+    top:1vw;
+    left: 53vw;
+    width:5vw;
+    height:5vw;
+}
+
+#configure {
+    top:1vw;
+    left:.7vw;
+    font-size: 2.5vw;
+    height:6vw;
+    width: 6vw;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.woahWATCHout {
+    top: -11vw;
+    position: absolute;
+    size:10vw;
+    width: 10vw;
+    z-index: -3;
+    transition: all .4s ease;
+}
+
+.astroidBOOMpieces {
+    position: absolute;
+    width:1.5vw;
+    height: 1.5vw;
+    background-color: grey;
+    border-radius: 5vw;
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity .6s ease;
+}

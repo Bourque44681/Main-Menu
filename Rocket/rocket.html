@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Not Space Invaders</title>
+        <meta charset="UTF-8">
+        <link rel = "icon" href = "Images/Pixal Rocketship.png">
+        <link rel = "stylesheet" href = "rocket.css">
+    </head>
+    <body>
+        <div id = "screenShakeContainer">
+            <img src = "Images/Space Background.jpg" id = "Background">
+
+            <img src = "Images/Pixal Rocketship.png" id = "Rocketship">
+        </div>
+
+        <!-- Bullet Templete -->
+        <div class = "shoot" id = "shoot"></div>
+        
+        <div id = "MENU-div">
+            <div class = "menuBackG" id = "mainMenu">
+                <div id = "extraBack" class = "menuBackG">
+                    <button class = "button" id = "play-resume">play-resume</button>
+                    <button class = "button" id = "settings">Settings</button>
+                    <button class = "button" id = "options">Options</button>
+                    <button class = "button" id = "quit">Quit</button>
+                </div>
+                <div class = "button smallButton" id = "gearSettingsButton">
+                    <img id = "gearSettings" src = "Images/Gear icon.png">
+                </div>
+                <button class = "button smallButton" id = "configure">con</button>
+            </div>
+        </div>
+
+        <img class = "woahWATCHout" src = "Images/Asteroids 3.png">
+        <div id = "templete" class = "astroidBOOMpieces"></div>
+        <script src = "rocket.js"></script>
+    </body>
+</html>
